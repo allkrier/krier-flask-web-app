@@ -1,23 +1,19 @@
 # module 11 - Flask Application
 # Mike Colbert 4/06/2025
 
-from flask import Flask
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
 
 @app.route("/")
 def hello():
-    return "Hello World!!"
+    return render_template("index.html")
 
 
-@app.route("/allie")
-def allie():
-    x = 12
-    y = 16
-    z = x + y
-    name = "Allie"
-    return f"Hello {name}, the sum of {x} and {y} is {z}!!"
+@app.route("/about")
+def about():
+    return render_template("about.html")
 
 
 if __name__ == "__main__":
